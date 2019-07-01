@@ -16,3 +16,8 @@
   width: 50vw;
   padding: 5vh;
 }
+
+.UserInputForm { 
+  padding: 5vh;
+  font-size: 2rem;
+}
