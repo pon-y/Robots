@@ -1,6 +1,7 @@
 div {
   padding: 1rem;
 }
+
 .App {
   text-align: center;
   display: flex;
@@ -10,6 +11,7 @@ div {
   font-family: 'Work Sans', sans-serif;
   
 }
+
 .name {
   padding: 3vh;
   font-size: 5rem;
@@ -19,9 +21,8 @@ div {
 
 .RobotContainer {
   font-size: 2rem;
-  height: 50vh;
-  width: 50vw;
-  
+  height: 40vh;
+  width: 40vw;
   color: #484848;
   text-align: center;
 }
@@ -51,10 +52,9 @@ div {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
     -webkit-animation-duration: 3s;
-            animation-duration: 3s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
- 
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
  }
 
  input {
@@ -66,21 +66,23 @@ div {
   outline: 0;
   border-bottom : 1px solid #e6e6e6;
   border-radius: 0px;
-  
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
  }
+
 .button {
   background-color: coral;
   color: white;
   box-shadow: 2px 4px 5px #661b00;
   border: none;
 }
+
 .button:hover {
   background-color: white;
   color: coral;
 }
+
 .select select { 
   font-family: 'Work Sans';
   display: inline-block;
@@ -98,11 +100,13 @@ div {
 .select select::-ms-expand {
   display: none;
 }
+
 .select select:hover,
 .select select:focus {
   color: #000000;
   background: #cccccc;
 }
+
 .select select:disabled {
   opacity: 0.5;
   pointer-events: none;

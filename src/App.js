@@ -36,7 +36,7 @@ class App extends Component {
     } else {
         return Promise.reject(response.status);
     }
-   })
+  })
   .then(imgBlob => {
     let imgURL = URL.createObjectURL(imgBlob)
     console.log(imgBlob);
@@ -58,7 +58,6 @@ class App extends Component {
         handleSelectChange={ this.handleSelectChange }
         handleSubmit={ this.handleSubmit }
       />
-      {/* Options for custom image types here*/}
       <RobotContainer robot={ this.state.robot }/> 
       <div className="credit">Robots lovingly delivered by Robohash.org</div>
     </div>

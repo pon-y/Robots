@@ -4,19 +4,17 @@ function Form ( props ) {
 
   const { input, imgSet, handleSelectChange, handleInputChange, handleSubmit } = props;
   return (
-
     <form className="UserInputForm">
       <div>
         <label>
-          Enter text: 
+          Text Input: 
           <input type="text" value={input} onChange={ handleInputChange }/>
         </label>
-       
       </div>
 
       <div className="select">
         <label>
-          What image set do you want to use? 
+          Image Set: 
           <select value={ imgSet } onChange={ handleSelectChange}>
             <option default value="">Robots</option>
             <option  value="/?set=set2">Monsters</option>
