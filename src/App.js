@@ -6,13 +6,18 @@ import RobotContainer from './Components/RobotContainer';
 
 class App extends Component {
   state = {
-    input: 'happy',
-    imgSet: 'kittens',
-    robot: null
+    input: '',
+    imgSet: '',
+    robot: ''
   }
 
  handleInputChange = (e) => {
   this.setState({ input: e.target.value })
+ }
+
+ handleSelectChange = (e) => {
+   console.log(e.value);
+  this.setState({ imgSet: e.target.value });
  }
 
  handleSubmit = (e) => {
@@ -21,15 +26,8 @@ class App extends Component {
  }
 
  getRobot = (userInput, imageSet) => {
-
-  let imageSetOptions = {
-    robots : '',
-    monsters : `/?set=set2`,
-    robotHeads : '?set=set3',
-    kittens: `?set=set4`
-  };
-
-  let url = `https://robohash.org/`.concat(userInput, imageSetOptions[imageSet]);
+  this.setState({ robot: 'loading' });
+  let url = `https://robohash.org/`.concat(userInput, imageSet);
 
   fetch(url)
   .then(response => {
@@ -41,7 +39,8 @@ class App extends Component {
    })
   .then(imgBlob => {
     let imgURL = URL.createObjectURL(imgBlob)
-    this.setState({robot: imgURL});
+    console.log(imgBlob);
+    this.setState({ robot: imgURL });
   });
  };
 
@@ -53,12 +52,15 @@ class App extends Component {
     <div className="App">
       <h1 className="name"> Yvonne Pon </h1>
       <Form
-        input={this.state.input} 
-        handleInputChange={this.handleInputChange} 
-        handleSubmit={this.handleSubmit}
+        input={ this.state.input } 
+        imgSet={ this.state.imgSet }
+        handleInputChange={ this.handleInputChange } 
+        handleSelectChange={ this.handleSelectChange }
+        handleSubmit={ this.handleSubmit }
       />
       {/* Options for custom image types here*/}
-      <RobotContainer robot={this.state.robot}/> 
+      <RobotContainer robot={ this.state.robot }/> 
+      <div className="credit">Robots lovingly delivered by Robohash.org</div>
     </div>
   );
   }

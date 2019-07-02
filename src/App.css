@@ -1,23 +1,109 @@
+div {
+  padding: 1rem;
+}
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: space-around;
+  font-family: 'Work Sans', sans-serif;
+  
 }
 .name {
-  padding: 5vh;
+  padding: 3vh;
+  font-size: 5rem;
+  color: #484848;
+  font-weight: 400;
 }
 
 .RobotContainer {
-  border: 1px solid black;
   font-size: 2rem;
   height: 50vh;
   width: 50vw;
-  padding: 5vh;
+  
+  color: #484848;
+  text-align: center;
 }
 
 .UserInputForm { 
   padding: 5vh;
   font-size: 2rem;
+  color: #484848;
+}
+
+.credit {
+  padding: 3vh;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.loader {
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+ 
+ }
+
+ input {
+  font-family: 'Work Sans';
+  display: inline-block;
+  width: 30%;
+  cursor: pointer;
+  padding: 5px 5px;
+  outline: 0;
+  border-bottom : 1px solid #e6e6e6;
+  border-radius: 0px;
+  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+ }
+.button {
+  background-color: coral;
+  color: white;
+  box-shadow: 2px 4px 5px #661b00;
+  border: none;
+}
+.button:hover {
+  background-color: white;
+  color: coral;
+}
+.select select { 
+  font-family: 'Work Sans';
+  display: inline-block;
+  width: 30%;
+  cursor: pointer;
+  padding: 5px 5px;
+  outline: 0;
+  border-bottom : 1px solid #e6e6e6;
+  border-radius: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #000000;
+  background: #cccccc;
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

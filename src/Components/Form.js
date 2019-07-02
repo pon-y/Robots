@@ -1,14 +1,31 @@
 import React from 'react';
 
 function Form ( props ) {
+
+  const { input, imgSet, handleSelectChange, handleInputChange, handleSubmit } = props;
   return (
 
     <form className="UserInputForm">
-      <label>
-        Enter text: 
-        <input type="text" value={props.input} onChange={props.handleInputChange}/>
-      </label>
-      <input className="button" type="submit" value="Submit" onClick={props.handleSubmit}/>
+      <div>
+        <label>
+          Enter text: 
+          <input type="text" value={input} onChange={ handleInputChange }/>
+        </label>
+       
+      </div>
+
+      <div className="select">
+        <label>
+          What image set do you want to use? 
+          <select value={ imgSet } onChange={ handleSelectChange}>
+            <option default value="">Robots</option>
+            <option  value="/?set=set2">Monsters</option>
+            <option  value="/?set=set3">Robot Heads</option>
+            <option value="/?set=set4">Kittens</option>
+          </select>
+        </label>
+      </div>
+      <input className="button" type="submit" value="Submit" onClick={ handleSubmit }/>
     </form>
   )
 }
