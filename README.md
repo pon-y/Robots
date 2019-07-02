@@ -1,3 +1,5 @@
+This project calls robohash and displays a picture depending on user input. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
