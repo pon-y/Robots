@@ -27,8 +27,9 @@ class App extends Component {
 
  getRobot = (userInput, imageSet) => {
   this.setState({ robot: 'loading' });
-  let url = `https://robohash.org/`.concat(userInput, imageSet);
+  const url = `https://robohash.org/`.concat(userInput, imageSet);
 
+   
   fetch(url)
   .then(response => {
     if(response.status === 200) {
@@ -38,9 +39,14 @@ class App extends Component {
     }
   })
   .then(imgBlob => {
-    let imgURL = URL.createObjectURL(imgBlob)
+    const imgURL = URL.createObjectURL(imgBlob)
     console.log(imgBlob);
-    this.setState({ robot: imgURL });
+    if(imgBlob.type === "image/png"){
+      this.setState({ robot: imgURL });
+    }
+    else {
+      this.setState({ robot: 'invalid' });
+    }
   });
  };
 
